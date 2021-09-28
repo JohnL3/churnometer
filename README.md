@@ -31,7 +31,7 @@ Each row represents a customer, each column contains customer attribute. The dat
 | Churn            | Inform the customer churned or not                          | Yes or No                                                                            |
 
 
-* **Project Terms & Jargons**
+* **Project Terms & Jargon**
 	* A customer is a person who consumes your service or product.
 	* A prospect is a potential customer.
 	* A churned customer is a user who has stopped using your product or service.
