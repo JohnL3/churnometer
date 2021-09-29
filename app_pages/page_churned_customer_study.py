@@ -1,6 +1,13 @@
 import streamlit as st
 from src.data_management import load_telco_data
 
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+from feature_engine.discretisation import ArbitraryDiscretiser
+import numpy as np
+import plotly.express as px
+
 def page_churned_customer_study_body():
     st.write("### Churned Customer Study")
     st.info(
@@ -63,8 +70,20 @@ def inspect_data(df):
     
 
 
-import matplotlib.pyplot as plt
-import seaborn as sns
+
+
+
+
+def churn_level_per_variable(df_eda):
+    target_var = 'Churn'
+    sns.set_style("whitegrid")
+
+    for col in df_eda.drop([target_var], axis=1).columns.to_list():
+        if df_eda[col].dtype == 'object':
+            plot_categorical(df_eda, col, target_var)
+        else:
+            plot_numerical(df_eda, col, target_var)
+
 def plot_categorical(df, col, target_var):
     fig, axes = plt.subplots(figsize=(12, 5))
     sns.countplot(data=df, x=col, hue=target_var,order = df[col].value_counts().index)
@@ -79,23 +98,8 @@ def plot_numerical(df, col, target_var):
     st.pyplot(fig)
 
 
-def churn_level_per_variable(df_eda):
-    target_var = 'Churn'
-    sns.set_style("whitegrid")
-
-    for col in df_eda.drop([target_var], axis=1).columns.to_list():
-        if df_eda[col].dtype == 'object':
-            plot_categorical(df_eda, col, target_var)
-        else:
-            plot_numerical(df_eda, col, target_var)
-
-
 
 def parallel_plot_churn(df_eda):
-    from feature_engine.discretisation import ArbitraryDiscretiser
-    import numpy as np
-    import plotly.express as px
-
     tenure_map = [-np.Inf, 6, 12, 18, 24, np.Inf]
     disc = ArbitraryDiscretiser(binning_dict={'tenure': tenure_map})
     df_parallel = disc.fit_transform(df_eda)
