@@ -74,7 +74,7 @@ As a Data Analyst from Code Institute Consulting, you are requested by Telco div
 * We want a ML model to predict if a prospect will churn or not, based on historical data from customer base, which doesn't include tenure and total charges, since these values are zero for a prospect. The target variable is categorical and contains 2-classes. We consider a **classification model**, it is a supervised model, a 2-class, single-label, classification model output: 0 (no churn), 1 (yes churn)
 * Our ideal outcome is provide to our sales team a reliable insight on how to onboard customer with a higher sense of loyalty.
 * The model success metrics are
-	* at least 85% Recall for Churn, on train and test set (We don't want to miss a potential churner)
+	* at least 80% Recall for Churn, on train and test set 
 	* The ML model is considered a failure if:
 		* after 3 months of usage, more than 30% of new onboarded custormer churn (it is an indication that the offers are not working or the model is not detecting potential churners)
 		* Precision for non churn customer is lower than 80% on train and test set. (We don't want to offer free discount to many non churnable prospects)
