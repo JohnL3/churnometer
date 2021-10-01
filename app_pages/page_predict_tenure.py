@@ -4,7 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 from src.data_management import load_telco_data, load_pkl_file
-from src.machine_learning.evaluate_clf import clf_performance_train_test_set
+from src.machine_learning.evaluate_clf import clf_performance
 
 
 
@@ -48,10 +48,13 @@ def page_predict_tenure_body():
 
     # evaluate performance on both sets
     st.write("### Pipeline Performance")
-    clf_performance_train_test_set(X_train,y_train,
-                                X_test,y_test,
-                                pipeline = tenure_pipe,
-                                LabelsMap = tenure_labels_map)
+    clf_performance(X_train=X_train, y_train=y_train,
+                        X_test=X_test, y_test=y_test,
+                        pipeline=tenure_pipe,
+                        label_map= tenure_labels_map )
+
+
+#
 
 
 #
