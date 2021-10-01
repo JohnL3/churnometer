@@ -26,36 +26,35 @@ def page_predict_churn_body():
         f"since we are interested in this project to not leave a potential churner behind. \n"
         f"* We also accept the fact prospects that will likely not churn may be "
         f"identified as potential churners.")
-    st.write("---")
+    
 
     # show pipelines
+    st.write("---")
     st.write(
-        f"#### 2 ML Pipelines arragended in series. \n"
+        f"#### There are 2 ML Pipelines arragended in series. \n"
         f"That was needed since the target was imbalanced, and we used SMOTE technique")
-    st.write("  * The first is responsible for data cleaning and feature engineering.")
+    st.write(" * The first is responsible for data cleaning and feature engineering.")
 
     st.write(churn_pipe_dc_fe)
-    st.write("  * The second for feature scaling and modelling. ")
+    st.write("* The second for feature scaling and modelling. ")
     st.write(churn_pipe_model)
-    st.write("---")
+    
 
-  
     # show feature importance plot
+    st.write("---")
     st.write("* The features the model was trained and its importance")
     st.write(X_train.columns.to_list())
     st.image(churn_feat_importance)
-    st.write("---")
-
+    
 
     # We don't need to apply dc_fe pipeline, since X_train and X_test
     # were already transformed in the notebook
 
     # evaluate performance on train and test set
+    st.write("---")
     st.write("### Pipeline Performance")
     clf_performance(X_train=X_train, y_train=y_train,
                         X_test=X_test, y_test=y_test,
                         pipeline=churn_pipe_model,
                         label_map= ["No Churn","Yes Churn"] )
 
-
-#

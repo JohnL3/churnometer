@@ -39,8 +39,3 @@ def page_summary_body():
         )
 
         
-
-    project_snapshot = plt.imread("pictures/requirements.png")
-    st.image(project_snapshot, caption='Representations for Business Requirements 1 and 2, respectively.')
-
-   
