@@ -41,7 +41,7 @@ Each row represents a customer, each column contains customer attribute. The dat
 As a Data Analyst from Code Institute Consulting, you are requested by Telco division to provide actionable insights and data driven recommendations to a Telecom corporation. This client has substantial customer base and is interested to manage churn levels and understand how the sales team could better interact with prospects. The data has been shared by the client
 
 * 1 - The client is interested to understand the patterns from customer base, so the client can learn the most relevant variables that are correlated to a churned customer.
-* 2 - The client is interested to tell whether or not a given prospect will churn. If so, the client is interested to know when. In addition the client is interested to know from which cluster this prospect will belong in the customer base, and based on that, present potential factors that could mantain and/or bring the prospect to a non-churnable cluster.
+* 2 - The client is interested to tell whether or not a given prospect will churn. If so, the client is interested to know when. In addition the client is interested to know from which cluster this prospect will belong in the customer base, and based on that, present potential factors that could maintain and/or bring the prospect to a non-churnable cluster.
 
 
 ## Hypothesis and how to validate?
@@ -126,20 +126,24 @@ As a Data Analyst from Code Institute Consulting, you are requested by Telco div
 * In addition, present cluster profile; so the person who is attending the prospect can suggest a offer that will bring the prospect to a non churnable customer
 
 ### Page 4: Project Hypothesis and Validation
-* For each project hypothesis, describe the conclusion on how you validated
+* For each project hypothesis, describe the conclusion and how you validated
 
 ### Page 5: Predict Churn
-* Evaluation metrics/performance on ChurnClf
-  * For both train and test set: Confusion Matrix and Classification Report
+* Present ML pipeline steps
+* Feature importance
+* Pipeline performance
 
 ### Page 6: Predict Tenure
-* Evaluation metrics/performance on TenureReg
-  * For both train and test set: R2, RMSE, MSE, MAE
+* Present ML pipeline steps
+* Feature importance
+* Pipeline performance
 
 ### Page 7: Cluster Analysis
-* Evaluation metrics/performance on TelcoCluster:  Silhouete score
+* Present ML pipeline steps
+* Silhouete score
 * Clusters distribution across Churn levels
 * Relative Percentage (%) of Churn in each cluster
+* Most important features to define a cluster
 * Cluster Profile
 
 

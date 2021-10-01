@@ -34,7 +34,7 @@ def page_summary_body():
         f"* 2 - The client is interested to tell whether or not a given prospect will churn. "
         f"If so, the client is interested to know when. In addition the client is "
         f"interested to know from which cluster this prospect will belong in the customer base, "
-        f"and based on that, present potential factors that could mantain and/or bring "
+        f"and based on that, present potential factors that could maintain and/or bring "
         f"the prospect to a non-churnable cluster."
         )
 
