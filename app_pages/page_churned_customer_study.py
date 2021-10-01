@@ -9,12 +9,6 @@ import numpy as np
 import plotly.express as px
 
 def page_churned_customer_study_body():
-    st.write("### Churned Customer Study")
-    st.info(
-        f"* The client is interested to understand the patterns from customer base, "
-        f"so the client can learn the most relevant variables that are correlated "
-        f"to a churned customer.")
-
 
     # load data
     df = load_telco_data()
@@ -22,10 +16,18 @@ def page_churned_customer_study_body():
     # hard copied from data visualization notebook
     vars_to_study = ['Contract', 'InternetService', 'OnlineSecurity', 'TechSupport', 'tenure']
 
+    st.write("### Churned Customer Study")
+    st.info(
+        f"* The client is interested to understand the patterns from customer base, "
+        f"so the client can learn the most relevant variables that are correlated "
+        f"to a churned customer.")
+
+
     # inspect collected data
     if st.checkbox("Inspect Customer Base"):
         inspect_data(df)
     st.write("---")
+
 
     # Correlation Study Summary
     st.write(
@@ -45,7 +47,9 @@ def page_churned_customer_study_body():
     )
 
 
+
     df_eda = df.filter(vars_to_study + ['Churn'])
+
     # Individual plots per variable
     if st.checkbox("Churn Levels per Variable"):
         churn_level_per_variable(df_eda)
@@ -89,13 +93,13 @@ def plot_categorical(df, col, target_var):
     sns.countplot(data=df, x=col, hue=target_var,order = df[col].value_counts().index)
     plt.xticks(rotation=90) 
     plt.title(f"{col}", fontsize=20,y=1.05)        
-    st.pyplot(fig)
+    st.pyplot(fig) # st.pyplot() renders image, in notebook is plt.show()
 
 def plot_numerical(df, col, target_var):
     fig, axes = plt.subplots(figsize=(8, 5))
     sns.histplot(data=df, x=col, hue=target_var, kde=True,element="step") 
     plt.title(f"{col}", fontsize=20,y=1.05)
-    st.pyplot(fig)
+    st.pyplot(fig) # st.pyplot() renders image, in notebook is plt.show()
 
 
 
@@ -116,6 +120,6 @@ def parallel_plot_churn(df_eda):
 
     df_parallel['tenure'] = df_parallel['tenure'].replace(LabelsMap)
     fig = px.parallel_categories(df_parallel, color="Churn", width=750, height=500)
-    st.plotly_chart(fig)
+    st.plotly_chart(fig)  # we use st.plotly_chart() to render, in notebook is fig.show()
 
 

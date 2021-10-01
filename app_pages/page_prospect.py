@@ -8,19 +8,6 @@ from src.machine_learning.predictive_analysis_ui import (
 														predict_cluster)
 
 def page_prospect_body():
-	st.write("### Prospect Churnometer Interface")
-	st.info(
-		f"* The client is interested to tell whether or not a given prospect will churn. "
-		f"If so, the client is interested to know when. In addition the client is interested "
-		f"to know from which cluster this prospect will belong in the customer base, "
-		f"and based on that, present potential factors that could mantain and/or bring "
-		f"the prospect to a non-churnable cluster."
-	)
-	st.write(
-		f"* Please insert prospect information for predictive analysis: "
-		f"Take a look in the main features in the ML pipelines to make sense "
-		f"which feature impacts more which ML pipeline.")
-
 	
 	# load churn pipleline files
 	version = 'v1'
@@ -30,7 +17,6 @@ def page_prospect_body():
 					.columns
 					.to_list()
 					)
-
 
 	# load tenure pipeline files
 	version = 'v1'
@@ -51,6 +37,19 @@ def page_prospect_body():
 	cluster_profile = pd.read_csv(f"outputs/ml_pipeline/cluster_analysis/{version}/clusters_profile.csv")
 
 
+
+	st.write("### Prospect Churnometer Interface")
+	st.info(
+		f"* The client is interested to tell whether or not a given prospect will churn. "
+		f"If so, the client is interested to know when. In addition the client is interested "
+		f"to know from which cluster this prospect will belong in the customer base, "
+		f"and based on that, present potential factors that could mantain and/or bring "
+		f"the prospect to a non-churnable cluster."
+	)
+	st.write(
+		f"* Please insert prospect information for predictive analysis: "
+		f"Take a look in the main features in the ML pipelines to make sense "
+		f"which feature impacts more which ML pipeline.")
 
 	
 	# Generte Live Data
@@ -138,23 +137,6 @@ def DrawInputsWidgets():
 
 
 	with col5:
-		feature = "Partner"
-		st_widget = st.selectbox(
-			label= feature,
-			options= df[feature].unique()
-			)
-	X_live[feature] = st_widget
-
-
-	with col6:
-		feature = "MultipleLines"
-		st_widget = st.selectbox(
-			label= feature,
-			options= df[feature].unique()
-			)
-	X_live[feature] = st_widget
-
-	with col7:
 		feature = "OnlineSecurity"
 		st_widget = st.selectbox(
 			label= feature,
@@ -162,7 +144,7 @@ def DrawInputsWidgets():
 			)
 	X_live[feature] = st_widget
 
-	with col8:
+	with col6:
 		feature = "DeviceProtection"
 		st_widget = st.selectbox(
 			label= feature,

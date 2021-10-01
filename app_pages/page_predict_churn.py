@@ -30,12 +30,11 @@ def page_predict_churn_body():
 
     # show pipelines
     st.write("---")
-    st.write(
-        f"#### There are 2 ML Pipelines arragended in series. \n"
-        f"That was needed since the target was imbalanced, and we used SMOTE technique")
-    st.write(" * The first is responsible for data cleaning and feature engineering.")
+    st.write("#### There are 2 ML Pipelines arragended in series.")
 
+    st.write(" * The first is responsible for data cleaning and feature engineering.")
     st.write(churn_pipe_dc_fe)
+    
     st.write("* The second for feature scaling and modelling. ")
     st.write(churn_pipe_model)
     
@@ -48,7 +47,7 @@ def page_predict_churn_body():
     
 
     # We don't need to apply dc_fe pipeline, since X_train and X_test
-    # were already transformed in the notebook
+    # were already transformed in the jupyter notebook (Predict Customer Churn.ipynb)
 
     # evaluate performance on train and test set
     st.write("---")

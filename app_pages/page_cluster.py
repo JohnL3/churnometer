@@ -5,24 +5,24 @@ import matplotlib.pyplot as plt
 from src.data_management import load_telco_data, load_pkl_file
 
 def page_cluster_body():
-  st.write("### ML Pipeline: Cluster Customer Base")
 
-
-  # load cluster analysis files
+  # load cluster analysis files and pipeline
   version = 'v1'
   cluster_pipe = load_pkl_file(f"outputs/ml_pipeline/cluster_analysis/{version}/cluster_pipeline.pkl")
   cluster_silhouette = plt.imread(f"outputs/ml_pipeline/cluster_analysis/{version}/clusters_silhouette.png")
   features_to_cluster = plt.imread(f"outputs/ml_pipeline/cluster_analysis/{version}/features_define_cluster.png")
   cluster_profile = pd.read_csv(f"outputs/ml_pipeline/cluster_analysis/{version}/clusters_profile.csv")
   cluster_features = (pd.read_csv(f"outputs/ml_pipeline/cluster_analysis/{version}/TrainSet.csv")
-						.columns
-						.to_list()
-						)
+                      .columns
+                      .to_list()
+                    )
 
+  # dataframe for cluster_distribution_per_variable()
   df_churn_vs_clusters = load_telco_data().filter(['Churn'], axis=1)
   df_churn_vs_clusters['Clusters'] = cluster_pipe['model'].labels_
 
 
+  st.write("### ML Pipeline: Cluster Customer Base")
   st.write("#### Cluster ML Pipeline steps")
   st.write(cluster_pipe)
 
@@ -46,6 +46,8 @@ def page_cluster_body():
     f"* Consider the cluster profile below and the existing product offers to "
     f" suggest a plan that the prospect can move to a better or a non-churnable cluster.")
   st.write(statement)
+  
+  # hack to not display index in st.table() or st.write()
   cluster_profile.index = [" "] * len(cluster_profile) 
   st.table(cluster_profile)
 

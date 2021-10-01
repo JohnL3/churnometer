@@ -2,26 +2,11 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-
 from src.data_management import load_telco_data, load_pkl_file
 from src.machine_learning.evaluate_clf import clf_performance
 
 
-
 def page_predict_tenure_body():
-    st.write("### ML Pipeline: Predict Prospect Tenure")    
-
-
-    st.info(
-        f"* Initially we wanted to have a Regressor model to predict tenure for a likely "
-        f"churnable prospect, but regressor performance was weak. We converted the target to "
-        f"classes and transformed the ML task to a classification problem. \n"
-        f"* We tuned this pipeline for Recall on '<4.0' class, "
-        f"since we are interested in this project to detect any prospect that may churn soon. \n"
-        f"* We notice that <4.0 and +20.0 classes have reasonable levels of performance, where "
-        f"'4.0 to 20.0' performance is poor. This will be a limitation of our project and we "
-        f"accept that a prediction on <4.0 and +20.0 will be handled as a <4.0.")
-    st.write("---")
 
     # load tenure pipeline files
     version = 'v1'
@@ -34,6 +19,20 @@ def page_predict_tenure_body():
     y_test =  pd.read_csv(f"outputs/ml_pipeline/predict_tenure/{version}/y_test.csv")
 
  
+
+    st.write("### ML Pipeline: Predict Prospect Tenure")    
+    st.info(
+        f"* Initially we wanted to have a Regressor model to predict tenure for a likely "
+        f"churnable prospect, but **regressor performance was weak**. We converted the target to "
+        f"classes and transformed the ML task to a **classification** problem. \n"
+        f"* We tuned this pipeline for Recall on '<4.0' class, "
+        f"since we are interested in this project to detect any prospect that may churn soon. \n"
+        f"* We notice that <4.0 and +20.0 classes have reasonable levels of performance, where "
+        f"'4.0 to 20.0' performance is poor. This will be a limitation of our project and we "
+        f"accept that a prediction on <4.0 and +20.0 will be handled as a <4.0.")
+    st.write("---")
+
+
 
     # show pipeline steps
     st.write("* ML pipeline to predict tenure when prospect is expected to churn")
@@ -52,11 +51,5 @@ def page_predict_tenure_body():
                         X_test=X_test, y_test=y_test,
                         pipeline=tenure_pipe,
                         label_map= tenure_labels_map )
-
-
-#
-
-
-#
 
     
