@@ -39,7 +39,7 @@ def page_churned_customer_study_body():
     st.info(
         f"The correlation indications and plots below interpretation converge. "
         f"It is indicated that: \n"
-        f"* A churned customern typically has a month to month contract \n"
+        f"* A churned customer typically has a month to month contract \n"
         f"* A churned customer typically has fiber optic. \n"
         f"* A churned customer typically doesn't have tech support. \n"
         f"* A churned customer doesn't have online security. \n"
