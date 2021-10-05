@@ -27,7 +27,7 @@ Each row represents a customer, each column contains a customer attribute. The d
 | PaperlessBilling | Inform if the customer has paperless billing or not         | Yes, No                                                                              |
 | PaymentMethod    | Inform the customer’s payment method                        | Electronic check, Mailed check, Bank transfer (automatic), Credit card   (automatic) |
 | MonthlyCharges   | Inform the amount charged to the customer monthly           | 18.3 - 119                                                                           |
-| TotalCharges     | Inform the total amount charged as a customerof our company | 18.8 - 8.68k                                                                         |
+| TotalCharges     | Inform the total amount charged as a customer of our company| 18.8 - 8.68k                                                                         |
 | Churn            | Inform the customer churned or not                          | Yes or No                                                                            |
 
 
