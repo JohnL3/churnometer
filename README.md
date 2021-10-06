@@ -2,7 +2,7 @@
 The dataset is sourced from [Kaggle](https://www.kaggle.com/blastchar/telco-customer-churn). We created then a fictitious user story where predictive analytics can be applied in a real project in the workplace.
 Each row represents a customer, each column contains a customer attribute. The data set includes information about:
 * Services that each customer has signed up for, like phone, multiple lines, internet, online security, online backup, device protection, tech support, streaming TV and movies
-* Customer information, like how long they've been a customer if they churned out their contract type, payment method, paperless billing, monthly charges, and total charges
+* Customer information, like how long they've been a customer if they churned out, their contract type, payment method, paperless billing, monthly charges, and total charges
 * Customer profile, like gender, if they have partners and dependents
 
 
@@ -10,13 +10,13 @@ Each row represents a customer, each column contains a customer attribute. The d
 |------------------|-------------------------------------------------------------|--------------------------------------------------------------------------------------|
 | customerID       | Customer identification                                     | Number and Letters code that form a unique identifier to a customer                  |
 | gender           | Customer gender                                             | Female or Male                                                                       |
-| SeniorCitizen    | Customer is a senior citizen or not                         | 1 for Senior and 0 for not Senior                                              |
+| SeniorCitizen    | Customer is a senior citizen or not                         | 1 for Senior and 0 for not Senior                                                    |
 | Partner          | Customer has a partner or not                               | Yes or No                                                                            |
 | Dependents       | Customer has dependents or not                              | Yes or No                                                                            |
 | tenure           | Number of months the customer has stayed with the company   | 0 to 72                                                                              |
 | PhoneService     | Customer has a phone service or not                         | Yes or No                                                                            |
 | MultipleLines    | Customer has multiple lines or not                          | Yes, No, No phone service                                                            |
-| InternetService  | Customer has an internet service provider                      | DSL, Fiber optic, No                                                                 |
+| InternetService  | Customer has an internet service provider                   | DSL, Fiber optic, No                                                                 |
 | OnlineSecurity   | Customer has online security or not                         | Yes, No, No internet service                                                         |
 | OnlineBackup     | Customer has online backup or not                           | Yes, No, No internet service                                                         |
 | DeviceProtection | Customer has device protection or not                       | Yes, No, No internet service                                                         |
@@ -91,8 +91,8 @@ As a Data Analyst from Code Institute Consulting, you are requested by the Telco
 	* At least 0.7 for R2 score , on train and test set
 	* The ML model is considered a failure if:
 		* after 12 months of usage, the model's predictions are 50% off more than 30% of the time. Say, a prediction is >50% off if predicted 10 months and the actual value was 2 months.
-* The output is defined as a continuous value for tenure in months. It is assumed that this model will predict tenure if the ChurnClf model predicts 1 (yes for churn). If the prospect is online, the prospect will have already provided the input data via a form. If the prospect talks to a salesperson, the salesperson will interview to gather the input data and feed it into the App. The prediction is made on the fly (not in batches).
-* Heuristics: Currently there is no approach to predict tenure levels on prospect or customer
+* The output is defined as a continuous value for tenure in months. It is assumed that this model will predict tenure if the Predict Churn Classifier predicts 1 (yes for churn). If the prospect is online, the prospect will have already provided the input data via a form. If the prospect talks to a salesperson, the salesperson will interview to gather the input data and feed it into the App. The prediction is made on the fly (not in batches).
+* Heuristics: Currently there is no approach to predict tenure levels on prospect.
 * The training data to fit the model come from the Telco Customer. This dataset contains about 7 thousand customer records.
 	* Train data - filter data where Churn == 1, then drop Churn variable. Target: tenure; features: all other variables, but total charges and customerID
 
@@ -114,7 +114,7 @@ As a Data Analyst from Code Institute Consulting, you are requested by the Telco
 
 ### Page 1: Quick project summary
 * Quick project summary
-	* Project Terms & Jargons
+	* Project Terms & Jargon
 	* Describe Project Dataset
 	* State Business Requirements
 
