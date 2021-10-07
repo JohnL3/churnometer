@@ -23,14 +23,14 @@ def page_predict_churn_body():
     st.write("### ML Pipeline: Predict Prospect Churn")    
     st.info(
         f"* We tuned this pipeline for Recall on 'Yes Churn' class, "
-        f"since we are interested in this project to not leave a potential churner behind. \n"
-        f"* We also accept the fact prospects that will likely not churn may be "
-        f"identified as potential churners.")
+        f"since we are interested in this project in not leaving a potential churner behind. \n"
+        f"* We also accept the fact that prospects not likely to churn "
+        f"may be identified as potential churners.")
     
 
     # show pipelines
     st.write("---")
-    st.write("#### There are 2 ML Pipelines arragended in series.")
+    st.write("#### There are 2 ML Pipelines arranged in series.")
 
     st.write(" * The first is responsible for data cleaning and feature engineering.")
     st.write(churn_pipe_dc_fe)
@@ -41,7 +41,7 @@ def page_predict_churn_body():
 
     # show feature importance plot
     st.write("---")
-    st.write("* The features the model was trained and its importance")
+    st.write("* The features the model was trained and their importance")
     st.write(X_train.columns.to_list())
     st.image(churn_feat_importance)
     

@@ -22,11 +22,11 @@ def page_cluster_body():
   df_churn_vs_clusters['Clusters'] = cluster_pipe['model'].labels_
 
 
-  st.write("### ML Pipeline: Cluster Customer Base")
+  st.write("### ML Pipeline: Cluster Analysis")
   st.write("#### Cluster ML Pipeline steps")
   st.write(cluster_pipe)
 
-  st.write("#### The features the model was trained")
+  st.write("#### The features the model was trained with")
   st.write(cluster_features)
 
   st.write("#### Clusters Silhouette")
@@ -44,7 +44,7 @@ def page_cluster_body():
     f"Technically, cluster 3 is almost churnable. "
     f"Clusters 0 and 2 are non-churnable. \n"
     f"* Consider the cluster profile below and the existing product offers to "
-    f" suggest a plan that the prospect can move to a better or a non-churnable cluster.")
+    f" suggest a plan that the prospect can move for a better or a non-churnable cluster.")
   st.write(statement)
   
   # hack to not display index in st.table() or st.write()

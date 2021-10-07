@@ -41,13 +41,13 @@ Each row represents a customer, each column contains a customer attribute. The d
 As a Data Analyst from Code Institute Consulting, you are requested by the Telco division to provide actionable insights and data-driven recommendations to a Telecom corporation. This client has a substantial customer base and is interested in managing churn levels and understanding how the sales team could better interact with prospects. The client has shared the data.
 
 * 1 - The client is interested in understanding the patterns from the customer base so that the client can learn the most relevant variables correlated to a churned customer.
-* 2 - The client is interested in telling whether or not a given prospect will churn. If so, the client is interested to know when. In addition, the client is interested in learning from which cluster this prospect will belong in the customer base. Based on that, present potential factors that could maintain and/or bring the prospect to a non-churnable cluster.
+* 2 - The client is interested in determining whether or not a given prospect will churn. If so, the client is interested to know when. In addition, the client is interested in learning from which cluster this prospect will belong in the customer base. Based on that, present potential factors that could maintain and/or bring the prospect to a non-churnable cluster.
 
 
 ## Hypothesis and how to validate?
-* We suspect customers are churning with low tenure levels
+* We suspect customers are churning with low tenure levels.
 	* A Correlation study can help in this investigation
-* A customer survey showed Fiber Optic is very appreciated by our customers
+* A customer survey showed our customers appreciate fibre Optic.
 	* A Correlation study can help in this investigation
 
 

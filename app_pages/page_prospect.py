@@ -40,19 +40,19 @@ def page_prospect_body():
 
 	st.write("### Prospect Churnometer Interface")
 	st.info(
-		f"* The client is interested to tell whether or not a given prospect will churn. "
-		f"If so, the client is interested to know when. In addition the client is interested "
-		f"to know from which cluster this prospect will belong in the customer base, "
-		f"and based on that, present potential factors that could mantain and/or bring "
-		f"the prospect to a non-churnable cluster."
+        f"* The client is interested in determining whether or not a given prospect will churn. "
+        f"If so, the client is interested to know when. In addition the client is "
+        f"interested in learning from which cluster this prospect will belong in the customer base. "
+        f"Based on that, present potential factors that could maintain and/or bring  "
+        f"the prospect to a non-churnable cluster."
 	)
 	st.write(
 		f"* Please insert prospect information for predictive analysis: "
-		f"Take a look in the main features in the ML pipelines to make sense "
-		f"which feature impacts more which ML pipeline.")
+		f"Take a look at the main features in the ML pipelines to make sense of"
+		f"which feature impacts most which ML pipeline.")
 
 	
-	# Generte Live Data
+	# Generate Live Data
 	# check_variables_for_UI(tenure_features, churn_features, cluster_features)
 	X_live = DrawInputsWidgets()
 

@@ -15,8 +15,8 @@ def page_summary_body():
         f"* This customer, has a **tenure** level, which is the number of months this person " 
         f"has used our product/service.\n\n"
         f"**Project Dataset**\n"
-        f"* The dataset represents a **customer base from a Telco company**, "
-        f"containing individual customer data on the products and services "
+        f"* The dataset represents a **customer base from a Telco company**. "
+        f"Containing individual customer data on the products and services "
         f"(like internet type, online security, online backup, tech support), "
         f"account information (like contract type, payment method, monthly charges) "
         f"and profile (like gender, partner, dependents).")
@@ -29,12 +29,12 @@ def page_summary_body():
     st.success(
         f"The project has 2 business requirements:\n"
         f"* 1 - The client is interested to understand the patterns from customer base, "
-        f"so the client can learn the most relevant variables that are correlated to a "
+        f"so that the client can learn the most relevant variables that are correlated to a "
         f"churned customer.\n"
-        f"* 2 - The client is interested to tell whether or not a given prospect will churn. "
+        f"* 2 - The client is interested in determining whether or not a given prospect will churn. "
         f"If so, the client is interested to know when. In addition the client is "
-        f"interested to know from which cluster this prospect will belong in the customer base, "
-        f"and based on that, present potential factors that could maintain and/or bring "
+        f"interested in learning from which cluster this prospect will belong in the customer base. "
+        f"Based on that, present potential factors that could maintain and/or bring  "
         f"the prospect to a non-churnable cluster."
         )
 

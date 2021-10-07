@@ -23,12 +23,12 @@ def page_predict_tenure_body():
     st.write("### ML Pipeline: Predict Prospect Tenure")    
     st.info(
         f"* Initially we wanted to have a Regressor model to predict tenure for a likely "
-        f"churnable prospect, but **regressor performance was weak**. We converted the target to "
-        f"classes and transformed the ML task to a **classification** problem. \n"
+        f"churnable prospect, but the **regressor performance was weak**. We converted the target to "
+        f"classes and transformed the ML task into a **classification** problem. \n"
         f"* We tuned this pipeline for Recall on '<4.0' class, "
-        f"since we are interested in this project to detect any prospect that may churn soon. \n"
+        f"since we are interested in this project, to detect any prospect that may churn soon. \n"
         f"* We notice that <4.0 and +20.0 classes have reasonable levels of performance, where "
-        f"'4.0 to 20.0' performance is poor. This will be a limitation of our project and we "
+        f"'4.0 to 20.0' performance is poor. This will be a limitation of our project. And we "
         f"accept that a prediction on <4.0 and +20.0 will be handled as a <4.0.")
     st.write("---")
 
@@ -40,7 +40,7 @@ def page_predict_tenure_body():
     st.write("---")
 
     # show best features
-    st.write("* The features the model was trained and its importance")
+    st.write("* The features the model was trained and their importance")
     st.write(X_train.columns.to_list())
     st.image(tenure_feat_importance)
     st.write("---")

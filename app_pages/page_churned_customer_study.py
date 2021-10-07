@@ -18,8 +18,8 @@ def page_churned_customer_study_body():
 
     st.write("### Churned Customer Study")
     st.info(
-        f"* The client is interested to understand the patterns from customer base, "
-        f"so the client can learn the most relevant variables that are correlated "
+        f"* The client is interested in understanding the patterns from the customer base, "
+        f"so that the client can learn the most relevant variables correlated "
         f"to a churned customer.")
 
 
@@ -67,7 +67,7 @@ def page_churned_customer_study_body():
 def inspect_data(df):
     st.write(
         f"* The dataset has {df.shape[0]} rows and {df.shape[1]} columns, find below the first 10 "
-        f"rows and a quick inspection on each variable content.")
+        f"rows and a quick inspection of each variable content.")
     st.write(df.head(10))
     
     for col in df.columns: st.write(f"* **{col}**:\n{df[col].unique()}\n")
