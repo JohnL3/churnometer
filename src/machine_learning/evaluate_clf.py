@@ -14,7 +14,7 @@ def confusion_matrix_and_report(X,y,pipeline,label_map):
         ))
 
   st.write('#### Classification Report')
-  st.code(classification_report(y, prediction),"\n")
+  st.code(classification_report(y, prediction, target_names=label_map),"\n")
 
 
 
